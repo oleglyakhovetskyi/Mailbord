@@ -1,0 +1,27 @@
+/* MANDATORY CSS */
+@import "http://fonts.googleapis.com/css?family=Lato:300,400,700,900";
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700";
+@import "../plugins/bootstrap/css/bootstrap.min";
+@import "../plugins/mcustom-scrollbar/mcustom_scrollbar.min";
+@import "../plugins/animation-css/animate.min";
+@import "icons/font-awesome/font-awesome";
+@import "icons/line-icons/line-icons";
+@import "icons/line-icons/simple-line-icons";
+@import "theme";
+// @import "../plugins/select2/select2"; /* Select & Radio Inputs */
+// @import "../plugins/slick/slick"; /* Text & Image Slider */
+// @import "../plugins/icheck/skins/all"; /* Checbox & Radio Icheck */
+// @import "../plugins/bootstrap/css/jasny-bootstrap"; /* File Upload and Input Masks */
+
+/* OPTIONAL CSS */
+/* Depend if you use this functionnalities in your project */
+@import "icons/rounded/style"; /* Rounded Icons - See Icons Page - OPTIONAL */
+@import "icons/octicons/octicons"; /* Topbar Left Icons - OPTIONAL */
+// @import "icons/weather/css/weather-icons.min"; /* Weather Icons - See Icons Page - OPTIONAL */
+// @import "../plugins/bootstrap-loading/lada.min"; /* Buttons Loading State - See Buttons Page - OPTIONAL */
+// @import "../plugins/bootstrap-tags-input/bootstrap-tagsinput"; /* Tags Input - See Form Elements Page - OPTIONAL */
+// @import "../plugins/bootstrap-editable/css/bootstrap-editable"; /* Inline Edition X-Editable - OPTIONAL */
+// @import "../plugins/prettify/prettify"; /* Show Html Code - OPTIONAL */
+
+/* FONTS */
+// @font-face{font-family:'weather';src:url('icons/weather/artill_clean_icons-webfont.eot');src:url('icons/weather/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),url('icons/weather/artill_clean_icons-webfont.woff') format('woff'),url('icons/weather/artill_clean_icons-webfont.ttf') format('truetype'),url('icons/weather/weatherfont/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');font-weight:normal;font-style:normal}

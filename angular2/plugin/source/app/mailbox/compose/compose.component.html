@@ -1,0 +1,29 @@
+<div class="page vertical-align text-center">
+  <div class="page-content vertical-align-middle"><h1><strong>Write</strong> an email</h1>
+    <form [formGroup]="mailForm" (ngSubmit)="sendMessage()">
+      <Label>To</Label>
+      <div  class="form-group" [ngClass]="{'has-error':!mailForm.controls['email'].valid && mailForm.controls['email'].touched}">
+        <input type="email" validateEmail class="form-group form-control"
+               [(ngModel)]="model.email"
+               [formControl]="mailForm.controls['email']">
+         <span class="help-block" *ngIf="!mailForm.controls['email'].valid && mailForm.controls['email'].touched">Please enter valid e-mail address</span>
+      </div>
+      <label>Subject</label>
+      <div class="form-group" [ngClass]="{'has-error':!mailForm.controls['subject'].valid && mailForm.controls['subject'].touched}">
+        <input type="text" [(ngModel)]="model.subject" class="form-control"
+              [formControl]="mailForm.controls['subject']">
+        <span class="help-block" *ngIf="!mailForm.controls['subject'].valid && mailForm.controls['subject'].touched"> Max subject length is 50 characters</span>
+      </div>
+      <label>Type your message</label>
+      <div class="form-group" [ngClass]="{'has-error':!mailForm.controls['message'].valid && mailForm.controls['message'].touched}">
+         <textarea [(ngModel)]="model.message" class="form-control "
+                   [formControl]="mailForm.controls['message']"></textarea>
+          <span class="help-block" *ngIf="!mailForm.controls['message'].valid && mailForm.controls['message'].touched"> Message is required</span>
+       </div>
+      <button type="submit" class="btn btn-primary btn-block"
+              [disabled]="!mailForm.valid">Send</button>
+    </form>
+  </div>
+</div>
+
+

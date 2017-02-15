@@ -1,0 +1,54 @@
+<div class="page vertical-align text-center">
+  <div class="page-content vertical-align-middle">
+    <p>Sign up to find interesting thing</p>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="form-group"  [ngClass]="{'has-error':!registerForm.controls['name'].valid && registerForm.controls['name'].touched}">
+            <input type="text" class="form-control" id="name"
+                   name="name" placeholder="Full Name"
+                  [formControl]="registerForm.controls['name']" [(ngModel)]="model.name">
+          <span class="help-block" *ngIf="!registerForm.controls['name'].valid && registerForm.controls['name'].touched">Name must be between 2 and 24 characters long</span>
+        </div>
+
+        <div class="form-group"  [ngClass]="{'has-error':!registerForm.controls['nickname'].valid && registerForm.controls['nickname'].touched}">
+          <input type="text" class="form-control" id="nickname"
+                name="nickname" placeholder="Nickname"
+                [formControl]="registerForm.controls['nickname']" [(ngModel)]="model.nickname">
+          <span class="help-block" *ngIf="!registerForm.controls['nickname'].valid && registerForm.controls['nickname'].touched">Nickname must be between 2 and 20 characters long</span>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['email'].valid && registerForm.controls['email'].touched}">
+            <input type="email" class="form-control" id="email"
+                   name="email" placeholder="Email"
+                   validateEmail
+                   [formControl]="registerForm.controls['email']" [(ngModel)]="model.email">
+            <span class="help-block" *ngIf="!registerForm.controls['email'].valid && registerForm.controls['email'].touched">Please enter valid e-mail address</span>
+        </div>
+
+        <div class="form-group"  [ngClass]="{'has-error':!registerForm.controls['company'].valid && registerForm.controls['company'].touched}">
+           <input type="text" class="form-control" id="company"
+                  name="company" placeholder="Company"
+                  [formControl]="registerForm.controls['company']" [(ngModel)]="model.company">
+            <span class="help-block" *ngIf="!registerForm.controls['company'].valid && registerForm.controls['company'].touched">Company is required</span>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['password'].valid && registerForm.controls['password'].touched}">
+            <input type="password" class="form-control" id="password"
+                   name="password" placeholder="Password" [(ngModel)]="model.password"
+                   [formControl]="registerForm.controls['password']"
+                   validateEqual="passwordCheck">
+            <span class="help-block" *ngIf="!registerForm.controls['password'].valid && registerForm.controls['password'].touched">Password must be at least 8 characters </span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['confirm'].valid && registerForm.controls['confirm'].touched}">
+            <input type="password" class="form-control" id="passwordCheck"
+                   name="passwordCheck" placeholder="Confirm Password"
+                   [formControl]="registerForm.controls['confirm']"
+                   validateEqual="password">
+            <span class="help-block" *ngIf="!registerForm.controls['confirm'].valid && registerForm.controls['confirm'].touched">Please confirm your password</span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block"
+                    [disabled]="!registerForm.valid || loading">Register</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+     </form>
+    <p>Have account already? Please go to <a routerLink="/login">Sign In</a></p>
+  </div>
+</div>

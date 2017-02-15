@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="row profile-container">
+                <div class="col-sm-4">
+                    <file-upload #fu (change)="fu.upload()" class="form control" [multiple]="true">
+                    </file-upload>
+                </div>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="profile-card">
+                            <div class="h3">Update info</div>
+                            <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+                                <Label>Name</Label>
+                                <div class="form-group" [ngClass]="{'has-error':!profileForm.controls['name'].valid
+                                      && profileForm.controls['name'].dirty}">
+                                    <input type="text" class="form-control" [formControl]="profileForm.controls['name']" [(ngModel)]="user.Name" name="name">
+                                    <span class="help-block" *ngIf="!profileForm.controls['name'].valid
+                                        && profileForm.controls['name'].dirty">
+                                      Name is required
+                                    </span>
+                                </div>
+                                <label>Email</label>
+                                <div class="form-group" [ngClass]="{'has-error':!profileForm.controls['email'].valid
+                                        && profileForm.controls['email'].dirty}">
+                                    <input type="text" class="form-control" [formControl]="profileForm.controls['email']" [(ngModel)]="user.Email" name="email" validateEmail>
+                                    <span class="help-block" *ngIf="!profileForm.controls['email'].valid
+                                            && profileForm.controls['email'].dirty">
+                                      Please enter valid e-mail address
+                                    </span>
+                                </div>
+                                <label>Company</label>
+                                <div class="form-group" [ngClass]="{'has-error':!profileForm.controls['company'].valid
+                                      && profileForm.controls['company'].dirty}">
+                                    <input type="text" class="form-control" id="company" name="company" [formControl]="profileForm.controls['company']" [(ngModel)]="user.Company">
+                                    <span class="help-block" *ngIf="!profileForm.controls['company'].valid
+                                         && profileForm.controls['company'].dirty">
+                                      Company is required
+                                    </span>
+                                </div>
+                                <label>Please enter the password to confirm the changes</label>
+                                <div class="form-group" [ngClass]="{'has-error':!profileForm.controls['password'].valid && profileForm.controls['password'].touched}">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" [formControl]="profileForm.controls['password']" [(ngModel)]="user.passwordhash">
+                                    <span class="help-block" *ngIf="!profileForm.controls['password'].valid && profileForm.controls['password'].touched">Please type your password</span>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block" [disabled]="!profileForm.valid && !profileForm.controls['password'].valid ">Update profile</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="loading" class="loader">
+                    <img src="assets/img/svg/spin.svg" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

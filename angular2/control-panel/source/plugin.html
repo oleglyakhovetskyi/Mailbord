@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plugin</title>
+    <base href="/">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/img/favicon/icon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/img/favicon/icon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/img/favicon/icon-64x64.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="assets/img/favicon/icon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="assets/img/favicon/icon-128x128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="assets/img/favicon/icon-196x196.png" sizes="196x196">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/img/favicon/osx-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="assets/img/favicon/osx-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/favicon/osx-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/img/favicon/osx-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/favicon/osx-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/img/favicon/osx-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/favicon/osx-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/img/favicon/osx-152x152.png">
+    <meta name="application-name" content="Good Night Medical">
+    <meta name="msapplication-TileColor" content="#222831">
+    <meta name="msapplication-TileImage" content="assets/img/favicon/ms-144x144.png">
+    <meta name="msapplication-square70x70logo" content="assets/img/favicon/ms-70x70.png">
+    <meta name="msapplication-square150x150logo" content="assets/img/favicon/ms-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="assets/img/favicon/ms-310x150.png">
+    <meta name="msapplication-square310x310logo" content="assets/img/favicon/ms-310x310.png">
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.min.css">
+    <link rel="stylesheet" href="assets/css/ui.min.css">
+    <link rel="stylesheet" href="assets/libs/angular2-toaster/toaster.css">
+    <!-- Scripts -->
+    <script src="assets/libs/core-js/client/shim.min.js"></script>
+    <script src="assets/libs/zone.js/dist/zone.js"></script>
+    <script src="assets/libs/reflect-metadata/Reflect.js"></script>
+    <script src="assets/libs/systemjs/dist/system.src.js"></script>
+    <!-- SignaIR -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/ms-signalr-client/jquery.signalR.min.js"></script>
+    <script>
+    System
+        .import('plugin.systemjs.config.js')
+        .then(function() {
+            System.import('app');
+        })
+        .catch(console.error.bind(console));
+    </script>
+</head>
+
+<body>
+    <h1>Plugin</h1>
+    <app>
+        <div class="loader-overlay">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </app>
+</body>
+
+</html>

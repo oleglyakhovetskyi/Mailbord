@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MailBox</title>
+
+  <!-- <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/assets/images/favicon.ico"> -->
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/bootstrap-extend.min.css">
+  <link rel="stylesheet" href="./assets/css/site.min.css">
+  <link rel="stylesheet" href="./assets/css/custom.css">
+
+  <!-- Plugins -->
+  <link rel="stylesheet" href="./assets/css/animsition.min.css">
+  <link rel="stylesheet" href="./assets/css/asScrollable.min.css">
+  <link rel="stylesheet" href="./assets/css/slidePanel.min.css">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="./assets/css/web-fonts.css">
+  <link rel="stylesheet" href="./assets/css/web-icons.css">
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+  <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+
+  <!-- Page -->
+  <link rel="stylesheet" href="./assets/css/mailbox.min.css">
+
+  <!-- Plugins For This Page -->
+  <link rel="stylesheet" href="./assets/css/bootstrap-markdown.min.css">
+  <link rel="stylesheet" href="./assets/css/select2.min.css">
+
+  <!-- Scripts -->
+  <script src="./assets/js/modernizr.min.js"></script>
+  <script src="./assets/js/breakpoints.min.js"></script>
+  <script>
+    Breakpoints();
+  </script>
+</head>
+
+<body class="site-menubar-unfold app-mailbox" ng-app="mailbord">
+
+  <nav class="site-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided" data-toggle="menubar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+        <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+      </button>
+      <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+        <img class="navbar-brand-logo" src="./assets/images/1480985653_markunread.svg" title="MailBox" alt="" width="48px" height="40px">
+        <span class="navbar-brand-text hidden-xs"> MailBox</span>
+      </div>
+      <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search"
+      data-toggle="collapse">
+        <span class="sr-only">Toggle Search</span>
+        <i class="icon wb-search" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="navbar-container container-fluid">
+      <!-- Navbar Collapse -->
+      <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+        <!-- Navbar Toolbar -->
+        <ul class="nav navbar-toolbar">
+          <li class="hidden-float" id="toggleMenubar">
+            <a data-toggle="menubar" href="#" role="button">
+              <i class="icon hamburger hamburger-arrow-left">
+                  <span class="sr-only">Toggle menubar</span>
+                  <span class="hamburger-bar"></span>
+                </i>
+            </a>
+          </li>
+          <li class="hidden-xs" id="toggleFullscreen">
+            <a class="icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+              <span class="sr-only">Toggle fullscreen</span>
+            </a>
+          </li>
+          <li class="hidden-float">
+            <a class="icon wb-search" data-toggle="collapse" href="#" data-target="#site-navbar-search"
+            role="button">
+              <span class="sr-only">Toggle Search</span>
+            </a>
+          </li>
+        </ul>
+        <!-- End Navbar Toolbar -->
+
+        <!-- Navbar Toolbar Right -->
+        <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+          <li class="dropdown">
+            <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
+            data-animation="scale-up" role="button">
+              <span class="avatar avatar-online">
+                <img src="./assets/portraits/user.png" alt="...">
+                <i></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation">
+                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
+              </li>
+              <li role="presentation">
+                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-payment" aria-hidden="true"></i> Billing</a>
+              </li>
+              <li role="presentation">
+                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Settings</a>
+              </li>
+              <li class="divider" role="presentation"></li>
+              <li role="presentation">
+                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a data-toggle="dropdown" href="javascript:void(0)" title="Notifications" aria-expanded="false"
+            data-animation="scale-up" role="button">
+              <i class="icon wb-bell" aria-hidden="true"></i>
+              <span class="badge badge-danger up">5</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li>5 Notifications</li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a data-toggle="dropdown" href="javascript:void(0)" title="Messages" aria-expanded="false" data-animation="scale-up" role="button">
+              <i class="icon wb-envelope" aria-hidden="true"></i>
+              <span class="badge badge-info up">3</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li>3 Messages</li>
+            </ul>
+          </li>
+        </ul>
+        <!-- End Navbar Toolbar Right -->
+      </div>
+      <!-- End Navbar Collapse -->
+
+      <!-- Site Navbar Seach -->
+      <div class="collapse navbar-search-overlap" id="site-navbar-search">
+        <form role="search">
+          <div class="form-group">
+            <div class="input-search">
+              <i class="input-search-icon wb-search" aria-hidden="true"></i>
+              <input type="text" class="form-control" name="site-search" placeholder="Search...">
+              <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search"
+              data-toggle="collapse" aria-label="Close"></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- End Site Navbar Seach -->
+    </div>
+  </nav>
+
+  <div class="site-menubar">
+    <div class="site-menubar-body scrollable">
+      <div class="scrollable-container">
+        <div class="scrollable-content">
+          <ul class="site-menu">
+            <li class="site-menu-category">General</li>
+            <li class="site-menu-item has-sub">
+              <a href="javascript:void(0)">
+                <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                <span class="site-menu-title">Dashboard</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+                <li class="site-menu-item">
+                  <a class="animsition-link" href="dashboard.html">
+                    <span class="site-menu-title">Dashboard</span>
+                  </a>
+                </li>
+                <li class="site-menu-item">
+                  <a class="animsition-link" href="dashboard-admin.html">
+                    <span class="site-menu-title">Dashboard Admin</span>
+                  </a>
+                </li>
+                <li class="site-menu-item">
+                  <a class="animsition-link" href="dashboard-user.html">
+                    <span class="site-menu-title">Dashboard User</span>
+                  </a>
+                </li>
+                <!-- <li class="site-menu-item">
+                  <a class="animsition-link" href="analytics.html">
+                    <span class="site-menu-title">Analytics</span>
+                  </a>
+                </li>
+                <li class="site-menu-item">
+                  <a class="animsition-link" href="users.html">
+                    <span class="site-menu-title">Users</span>
+                  </a>
+                </li> -->
+              </ul>
+            </li>
+            <li class="site-menu-category">Apps</li>
+            <li class="site-menu-item has-sub active open">
+              <a href="javascript:void(0)">
+                <i class="site-menu-icon wb-grid-4" aria-hidden="true"></i>
+                <span class="site-menu-title">Apps</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+                <li class="site-menu-item active">
+                  <a class="animsition-link" href="mailbox.html">
+                    <span class="site-menu-title">Mailbox</span>
+                  </a>
+                </li>
+                <li class="site-menu-item">
+                  <a class="animsition-link" href="index.html">
+                    <span class="site-menu-title">Chat</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="site-menubar-section">
+            <h5>
+              5.68 GB used
+              <span class="pull-right">37%</span>
+            </h5>
+            <div class="progress progress-xs">
+              <div class="progress-bar active" style="width: 37%;" role="progressbar"></div>
+            </div>
+            <!-- <h5>
+              Dropbox used
+              <span class="pull-right">60%</span>
+            </h5>
+            <div class="progress progress-xs">
+              <div class="progress-bar progress-bar-warning" style="width: 60%;" role="progressbar"></div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- <div class="scrollable-bar" draggable="false">
+        <div class="scrollable-bar-handle"></div>
+      </div> -->
+    </div>
+
+    <div class="site-menubar-footer">
+      <a href="javascript: void(0);" class="fold-show" data-placement="top" data-toggle="tooltip" data-original-title="Settings">
+        <span class="icon wb-settings" aria-hidden="true"></span>
+      </a>
+      <a href="javascript: void(0);" data-placement="top" data-toggle="tooltip" data-original-title="Lock">
+        <span class="icon wb-eye-close" aria-hidden="true"></span>
+      </a>
+      <a href="javascript: void(0);" data-placement="top" data-toggle="tooltip" data-original-title="Logout">
+        <span class="icon wb-power" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="page bg-white animsition">
+
+    <!-- Mailbox Sidebar -->
+    <div class="page-aside">
+      <div class="page-aside-switch">
+        <i class="icon wb-chevron-left" aria-hidden="true"></i>
+        <i class="icon wb-chevron-right" aria-hidden="true"></i>
+      </div>
+      <div class="page-aside-inner" data-plugin="pageAsideScroll">
+        <div data-role="container">
+          <div data-role="content">
+            <div class="page-aside-section">
+              <div class="list-group">
+                <a class="list-group-item active" href="javascript:void(0)">
+                  <span class="badge badge-danger">6</span><i class="icon wb-inbox" aria-hidden="true"></i>Inbox</a>
+                <a class="list-group-item" href="javascript:void(0)"><i class="icon wb-envelope" aria-hidden="true"></i>Sent</a>
+                <a class="list-group-item" href="javascript:void(0)">
+                  <span class="badge badge-info">2</span><i class="icon wb-edit" aria-hidden="true"></i>Draft</a>
+                <a class="list-group-item" href="javascript:void(0)"><i class="icon wb-star" aria-hidden="true"></i>Important</a>
+                <a class="list-group-item" href="javascript:void(0)"><i class="icon wb-trash" aria-hidden="true"></i>Trash</a>
+              </div>
+            </div>
+            <div class="page-aside-section">
+              <h5 class="page-aside-title">LABEL</h5>
+              <div class="list-group has-actions">
+                <div class="list-group-item">
+                  <div class="list-content">
+                    <i class="item-right wb-medium-point red-600" aria-hidden="true"></i>
+                    <span class="list-text">Work</span>
+                    <div class="item-actions">
+                      <span class="btn btn-pure btn-icon" data-toggle="list-editable"><i class="icon wb-edit" aria-hidden="true"></i></span>
+                      <span class="btn btn-pure btn-icon" data-tag="list-delete"><i class="icon wb-trash" aria-hidden="true"></i></span>
+                    </div>
+                  </div>
+                  <div class="list-editable">
+                    <div class="form-group form-material">
+                      <input type="text" class="form-control empty" name="label" data-bind=".list-text"
+                      value="Work">
+                      <button type="button" class="input-editable-close icon wb-close" data-toggle="list-editable-close"
+                      aria-label="Close" aria-expanded="true"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="list-content">
+                    <i class="item-right wb-medium-point orange-600" aria-hidden="true"></i>
+                    <span class="list-text">Family</span>
+                    <div class="item-actions">
+                      <span class="btn btn-pure btn-icon" data-toggle="list-editable"><i class="icon wb-edit" aria-hidden="true"></i></span>
+                      <span class="btn btn-pure btn-icon" data-tag="list-delete"><i class="icon wb-trash" aria-hidden="true"></i></span>
+                    </div>
+                  </div>
+                  <div class="list-editable">
+                    <div class="form-group form-material">
+                      <input type="text" class="form-control empty" name="label" data-bind=".list-text"
+                      value="Family">
+                      <button type="button" class="input-editable-close icon wb-close" data-toggle="list-editable-close"
+                      aria-label="Close" aria-expanded="true"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="list-content">
+                    <i class="item-right wb-medium-point cyan-600" aria-hidden="true"></i>
+                    <span class="list-text">Private</span>
+                    <div class="item-actions">
+                      <span class="btn btn-pure btn-icon" data-toggle="list-editable"><i class="icon wb-edit" aria-hidden="true"></i></span>
+                      <span class="btn btn-pure btn-icon" data-tag="list-delete"><i class="icon wb-trash" aria-hidden="true"></i></span>
+                    </div>
+                  </div>
+                  <div class="list-editable">
+                    <div class="form-group form-material">
+                      <input type="text" class="form-control empty" name="label" data-bind=".list-text"
+                      value="Private">
+                      <button type="button" class="input-editable-close icon wb-close" data-toggle="list-editable-close"
+                      aria-label="Close" aria-expanded="true"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="list-content">
+                    <i class="item-right wb-medium-point green-600" aria-hidden="true"></i>
+                    <span class="list-text">Friends</span>
+                    <div class="item-actions">
+                      <span class="btn btn-pure btn-icon" data-toggle="list-editable"><i class="icon wb-edit" aria-hidden="true"></i></span>
+                      <span class="btn btn-pure btn-icon" data-tag="list-delete"><i class="icon wb-trash" aria-hidden="true"></i></span>
+                    </div>
+                  </div>
+                  <div class="list-editable">
+                    <div class="form-group form-material">
+                      <input type="text" class="form-control empty" name="label" data-bind=".list-text"
+                      value="Friends">
+                      <button type="button" class="input-editable-close icon wb-close" data-toggle="list-editable-close"
+                      aria-label="Close" aria-expanded="true"></button>
+                    </div>
+                  </div>
+                </div>
+                <a id="addLabelToggle" class="list-group-item" href="javascript:void(0)">
+                  <i class="icon wb-plus" aria-hidden="true"></i> Add New Label
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Mailbox Content -->
+    <div class="page-main">
+
+      <!-- Mailbox Header -->
+      <div class="page-header">
+        <h1 class="page-title">Mailbox</h1>
+        <div class="page-header-actions">
+          <form>
+            <div class="input-search input-search-dark">
+              <i class="input-search-icon wb-search" aria-hidden="true"></i>
+              <input type="text" class="form-control" name="" placeholder="Search...">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Mailbox Content -->
+      <div class="page-content page-content-table" data-selectable="selectable">
+
+        <!-- Actions -->
+        <div class="page-content-actions">
+          <div class="pull-right filter">
+            <span>Filter :</span>
+            <div class="dropdown">
+              <button type="button" class="btn btn-pure dropdown-toggle" data-toggle="dropdown"
+              aria-expanded="false">
+                Check all
+                <span class="icon wb-chevron-down-mini" aria-hidden="true"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right animation-scale-up animation-top-right animation-duration-250"
+              role="menu">
+                <li><a href="javascript:void(0)">Check all</a></li>
+                <li><a href="javascript:void(0)">Check read</a></li>
+                <li><a href="javascript:void(0)">Check unread</a></li>
+                <li class="divider"></li>
+                <li><a href="javascript:void(0)">Check starred</a></li>
+                <li><a href="javascript:void(0)">Check unstarred</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="actions-main">
+            <span class="checkbox-custom checkbox-primary checkbox-lg inline-block vertical-align-bottom">
+              <input type="checkbox" class="mailbox-checkbox selectable-all" id="select_all"
+              />
+              <label for="select_all"></label>
+            </span>
+            <div class="btn-group">
+              <div class="dropdown">
+                <button class="btn btn-icon btn-pure btn-default dropdown-toggle" data-toggle="dropdown"
+                aria-expanded="false" type="button"><i class="icon wb-folder" aria-hidden="true" data-toggle="tooltip"
+                  data-original-title="Folder" data-container="body" title=""></i></button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="javascript:void(0)">work</a></li>
+                  <li><a href="javascript:void(0)">Family</a></li>
+                  <li><a href="javascript:void(0)">Private</a></li>
+                  <li><a href="javascript:void(0)">Friends</a></li>
+                  <li class="divider"></li>
+                  <li><a href="javascript:void(0)">Trash</a></li>
+                  <li><a href="javascript:void(0)">Spam</a></li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-icon btn-pure btn-default dropdown-toggle" data-toggle="dropdown"
+                aria-expanded="false" type="button"><i class="icon wb-tag" aria-hidden="true" data-toggle="tooltip"
+                  data-original-title="Tag" data-container="body" title=""></i></button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="javascript:void(0)">work</a></li>
+                  <li><a href="javascript:void(0)">Family</a></li>
+                  <li><a href="javascript:void(0)">Private</a></li>
+                  <li><a href="javascript:void(0)">Friends</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mailbox -->
+        <table id="mailboxTable" class="table" data-plugin="animateList" data-animate="fade"
+        data-child="tr">
+          <tbody>
+            <!-- 
+          <tr data-url="panel.tpl" data-toggle="slidePanel">
+            <td class="cell-60">
+              <span class="checkbox-custom checkbox-primary checkbox-lg">
+                <input type="checkbox" class="mailbox-checkbox selectable-item" id="mail_1"/>
+                <label for="mail_1"></label>
+              </span>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <span class="checkbox-important checkbox-default">
+                <input type="checkbox" class="mailbox-checkbox mailbox-important" id="mail_1_important"/>
+                <label for="mail_1_important"></label>
+              </span>
+            </td>
+            <td class="cell-60 responsive-hide">
+              <a class="avatar" href="javascript:void(0)"><img class="img-responsive" src="./assets/portraits/user.png" alt="..."></a>
+            </td>
+            <td>
+              <div class="content">
+                <div class="title">Gwendolyn Wheeler</div>
+                <div class="abstract"></div>
+              </div>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <i class="icon wb-paperclip" aria-hidden="true"></i>
+            </td>
+            <td class="cell-130">
+              <div class="time">1 day ago</div>
+              <div class="identity"><i class="wb-medium-point " aria-hidden="true"></i></div>
+            </td>
+          </tr>
+          <tr data-url="panel.tpl" data-toggle="slidePanel">
+            <td class="cell-60">
+              <span class="checkbox-custom checkbox-primary checkbox-lg">
+                <input type="checkbox" class="mailbox-checkbox selectable-item" id="mail_2"/>
+                <label for="mail_2"></label>
+              </span>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <span class="checkbox-important checkbox-default">
+                <input type="checkbox" class="mailbox-checkbox mailbox-important" id="mail_2_important"/>
+                <label for="mail_2_important"></label>
+              </span>
+            </td>
+            <td class="cell-60 responsive-hide">
+              <a class="avatar" href="javascript:void(0)"><img class="img-responsive" src="./assets/portraits/user.png" alt="..."></a>
+            </td>
+            <td>
+              <div class="content">
+                <div class="title">Daniel Russell</div>
+                <div class="abstract"></div>
+              </div>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <i class="icon wb-paperclip" aria-hidden="true"></i>
+            </td>
+            <td class="cell-130">
+              <div class="time">2 days ago</div>
+              <div class="identity"><i class="wb-medium-point " aria-hidden="true"></i></div>
+            </td>
+          </tr>
+          <tr data-url="panel.tpl" data-toggle="slidePanel">
+            <td class="cell-60">
+              <span class="checkbox-custom checkbox-primary checkbox-lg">
+                <input type="checkbox" class="mailbox-checkbox selectable-item" id="mail_3"/>
+                <label for="mail_3"></label>
+              </span>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <span class="checkbox-important checkbox-default">
+                <input type="checkbox" class="mailbox-checkbox mailbox-important" id="mail_3_important"/>
+                <label for="mail_3_important"></label>
+              </span>
+            </td>
+            <td class="cell-60 responsive-hide">
+              <a class="avatar" href="javascript:void(0)"><img class="img-responsive" src="./assets/portraits/user.png" alt="..."></a>
+            </td>
+            <td>
+              <div class="content">
+                <div class="title">Sarah Graves</div>
+                <div class="abstract"></div>
+              </div>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <i class="icon wb-paperclip" aria-hidden="true"></i>
+            </td>
+            <td class="cell-130">
+              <div class="time">3 days ago</div>
+              <div class="identity"><i class="wb-medium-point " aria-hidden="true"></i></div>
+            </td>
+          </tr>
+          <tr data-url="panel.tpl" data-toggle="slidePanel">
+            <td class="cell-60">
+              <span class="checkbox-custom checkbox-primary checkbox-lg">
+                <input type="checkbox" class="mailbox-checkbox selectable-item" id="mail_4"/>
+                <label for="mail_4"></label>
+              </span>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <span class="checkbox-important checkbox-default">
+                <input type="checkbox" class="mailbox-checkbox mailbox-important" id="mail_4_important"/>
+                <label for="mail_4_important"></label>
+              </span>
+            </td>
+            <td class="cell-60 responsive-hide">
+              <a class="avatar" href="javascript:void(0)"><img class="img-responsive" src="./assets/portraits/user.png" alt="..."></a>
+            </td>
+            <td>
+              <div class="content">
+                <div class="title">Andrew Hoffman</div>
+                <div class="abstract"></div>
+              </div>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <i class="icon wb-paperclip" aria-hidden="true"></i>
+            </td>
+            <td class="cell-130">
+              <div class="time">4 days ago</div>
+              <div class="identity"><i class="wb-medium-point " aria-hidden="true"></i></div>
+            </td>
+          </tr>
+          <tr data-url="panel.tpl" data-toggle="slidePanel">
+            <td class="cell-60">
+              <span class="checkbox-custom checkbox-primary checkbox-lg">
+                <input type="checkbox" class="mailbox-checkbox selectable-item" id="mail_5"/>
+                <label for="mail_5"></label>
+              </span>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <span class="checkbox-important checkbox-default">
+                <input type="checkbox" class="mailbox-checkbox mailbox-important" id="mail_5_important"/>
+                <label for="mail_5_important"></label>
+              </span>
+            </td>
+            <td class="cell-60 responsive-hide">
+              <a class="avatar" href="javascript:void(0)"><img class="img-responsive" src="./assets/portraits/user.png" alt="..."></a>
+            </td>
+            <td>
+              <div class="content">
+                <div class="title">Camila Lynch</div>
+                <div class="abstract"></div>
+              </div>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <i class="icon wb-paperclip" aria-hidden="true"></i>
+            </td>
+            <td class="cell-130">
+              <div class="time">5 days ago</div>
+              <div class="identity"><i class="wb-medium-point " aria-hidden="true"></i></div>
+            </td>
+          </tr>
+          <tr data-url="panel.tpl" data-toggle="slidePanel">
+            <td class="cell-60">
+              <span class="checkbox-custom checkbox-primary checkbox-lg">
+                <input type="checkbox" class="mailbox-checkbox selectable-item" id="mail_6"/>
+                <label for="mail_6"></label>
+              </span>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <span class="checkbox-important checkbox-default">
+                <input type="checkbox" class="mailbox-checkbox mailbox-important" id="mail_6_important"/>
+                <label for="mail_6_important"></label>
+              </span>
+            </td>
+            <td class="cell-60 responsive-hide">
+              <a class="avatar" href="javascript:void(0)"><img class="img-responsive" src="./assets/portraits/user.png" alt="..."></a>
+            </td>
+            <td>
+              <div class="content">
+                <div class="title">Ramon Dunn</div>
+                <div class="abstract"></div>
+              </div>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <i class="icon wb-paperclip" aria-hidden="true"></i>
+            </td>
+            <td class="cell-130">
+              <div class="time">6 days ago</div>
+              <div class="identity"><i class="wb-medium-point " aria-hidden="true"></i></div>
+            </td>
+          </tr>
+          <tr data-url="panel.tpl" data-toggle="slidePanel">
+            <td class="cell-60">
+              <span class="checkbox-custom checkbox-primary checkbox-lg">
+                <input type="checkbox" class="mailbox-checkbox selectable-item" id="mail_7"/>
+                <label for="mail_7"></label>
+              </span>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <span class="checkbox-important checkbox-default">
+                <input type="checkbox" class="mailbox-checkbox mailbox-important" id="mail_7_important"/>
+                <label for="mail_7_important"></label>
+              </span>
+            </td>
+            <td class="cell-60 responsive-hide">
+              <a class="avatar" href="javascript:void(0)"><img class="img-responsive" src="./assets/portraits/user.png" alt="..."></a>
+            </td>
+            <td>
+              <div class="content">
+                <div class="title">Scott Sanders</div>
+                <div class="abstract"></div>
+              </div>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <i class="icon wb-paperclip" aria-hidden="true"></i>
+            </td>
+            <td class="cell-130">
+              <div class="time">7 days ago</div>
+              <div class="identity"><i class="wb-medium-point " aria-hidden="true"></i></div>
+            </td>
+          </tr>
+          <tr data-url="panel.tpl" data-toggle="slidePanel">
+            <td class="cell-60">
+              <span class="checkbox-custom checkbox-primary checkbox-lg">
+                <input type="checkbox" class="mailbox-checkbox selectable-item" id="mail_8"/>
+                <label for="mail_8"></label>
+              </span>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <span class="checkbox-important checkbox-default">
+                <input type="checkbox" class="mailbox-checkbox mailbox-important" id="mail_8_important"/>
+                <label for="mail_8_important"></label>
+              </span>
+            </td>
+            <td class="cell-60 responsive-hide">
+              <a class="avatar" href="javascript:void(0)"><img class="img-responsive" src="./assets/portraits/user.png" alt="..."></a>
+            </td>
+            <td>
+              <div class="content">
+                <div class="title">Nina Wells</div>
+                <div class="abstract"></div>
+              </div>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <i class="icon wb-paperclip" aria-hidden="true"></i>
+            </td>
+            <td class="cell-130">
+              <div class="time">8 days ago</div>
+              <div class="identity"><i class="wb-medium-point " aria-hidden="true"></i></div>
+            </td>
+          </tr>
+          <tr data-url="panel.tpl" data-toggle="slidePanel">
+            <td class="cell-60">
+              <span class="checkbox-custom checkbox-primary checkbox-lg">
+                <input type="checkbox" class="mailbox-checkbox selectable-item" id="mail_9"/>
+                <label for="mail_9"></label>
+              </span>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <span class="checkbox-important checkbox-default">
+                <input type="checkbox" class="mailbox-checkbox mailbox-important" id="mail_9_important"/>
+                <label for="mail_9_important"></label>
+              </span>
+            </td>
+            <td class="cell-60 responsive-hide">
+              <a class="avatar" href="javascript:void(0)"><img class="img-responsive" src="./assets/portraits/user.png" alt="..."></a>
+            </td>
+            <td>
+              <div class="content">
+                <div class="title">Marvin Nelson</div>
+                <div class="abstract"></div>
+              </div>
+            </td>
+            <td class="cell-30 responsive-hide">
+              <i class="icon wb-paperclip" aria-hidden="true"></i>
+            </td>
+            <td class="cell-130">
+              <div class="time">9 days ago</div>
+              <div class="identity"><i class="wb-medium-point " aria-hidden="true"></i></div>
+            </td>
+          </tr>
+         -->
+          </tbody>
+        </table>
+        <!-- pagination -->
+        <ul data-plugin="paginator" data-total="50" data-skin="pagination-gap"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-action">
+    <button type="button" class="site-action-toggle btn-raised btn btn-success btn-floating">
+      <i class="front-icon wb-pencil animation-scale-up" aria-hidden="true"></i>
+      <i class="back-icon wb-close animation-scale-up" aria-hidden="true"></i>
+    </button>
+    <div class="site-action-buttons">
+      <button type="button" data-action="trash" class="btn-raised btn btn-success btn-floating animation-slide-bottom">
+        <i class="icon wb-trash" aria-hidden="true"></i>
+      </button>
+      <button type="button" data-action="inbox" class="btn-raised btn btn-success btn-floating animation-slide-bottom">
+        <i class="icon wb-inbox" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Create New Messages Modal -->
+  <div class="modal fade" id="addMailForm" aria-hidden="true" aria-labelledby="addMailForm"
+  role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Create New Messages</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <select id="topicTo" class="form-control" data-plugin="select2" multiple="multiple"
+              data-placeholder="To:">
+                <optgroup label="">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group">
+              <select id="topicSubject" class="form-control" data-plugin="select2" multiple="multiple"
+              data-placeholder="Subject:">
+                <optgroup label="">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea name="content" data-provide="markdown" data-iconlibrary="fa" rows="10"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer text-left">
+          <button class="btn btn-primary" data-dismiss="modal" type="submit">Send</button>
+          <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:void(0)">Cancel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Create New Messages Modal -->
+
+  <!-- Add Label Form -->
+  <div class="modal fade" id="addLabelForm" aria-hidden="true" aria-labelledby="addLabelForm"
+  role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Add New Label</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" name="lablename" placeholder="Label Name"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-dismiss="modal" type="submit">Save</button>
+          <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:void(0)">Cancel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Add Label Form -->
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-legal">© 2016 MailBox Plugin</div>
+    <div class="site-footer-right">
+      version: 0.0.2
+    </div>
+  </footer>
+
+  <!-- Core  -->
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./assets/js/animsition.min.js"></script>
+  <script src="./assets/js/jquery-asScroll.min.js"></script>
+  <script src="./assets/js/jquery.mousewheel.min.js"></script>
+  <script src="./assets/js/jquery.asScrollable.all.min.js"></script>
+  <script src="./assets/js/jquery-asHoverScroll.min.js"></script>
+  
+ <!-- Angular -->
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./app/app.js"></script>
+  <script src="./app/constants/constants.js"></script>
+  <script src="./app/services/dataService.js"></script>
+  <script src="./app/controllers/mailbox.js"></script>
+
+  <!-- Plugins -->
+  <script src="./assets/js/intro.min.js"></script>
+  <script src="./assets/js/screenfull.min.js"></script>
+  <script src="./assets/js/jquery-slidePanel.min.js"></script>
+
+  <!-- Plugins For This Page -->
+  <script src="./assets/js/global.select2.min.js"></script>
+  <script src="./assets/js/slidepanel.jquery-slidePanel.min.js"></script>
+  <script src="./assets/js/bootstrap-markdown.js"></script>
+  <script src="./assets/js/marked.min.js"></script>
+  <script src="./assets/js/to-markdown.js"></script>
+  <script src="./assets/js/aspaginator.jquery.asPaginator.min.js"></script>
+  <script src="./assets/js/bootbox.js"></script>
+
+  <!-- Scripts -->
+  <script src="./assets/js/core.min.js"></script>
+  <script src="./assets/js/site.min.js"></script>
+
+  <script src="./assets/js/menu.min.js"></script>
+  <script src="./assets/js/menubar.min.js"></script>
+  <script src="./assets/js/gridmenu.min.js"></script>
+  <script src="./assets/js/sidebar.min.js"></script>
+
+  <script src="./assets/js/components.asscrollable.min.js"></script>
+  <script src="./assets/js/components.animsition.min.js"></script>
+  <script src="./assets/js/components.slidepanel.min.js"></script>
+  
+  <script src="./assets/js/components.select2.min.js"></script>
+  <script src="./assets/js/components.aspaginator.min.js"></script>
+  <script src="./assets/js/components.animate-list.min.js"></script>
+  <script src="./assets/js/action-btn.min.js"></script>
+  <script src="./assets/js/plugins.selectable.min.js"></script>
+  <script src="./assets/js/components.selectable.min.js"></script>
+  <script src="./assets/js/components.material.min.js"></script>
+  <script src="./assets/js/components.bootbox.min.js"></script>
+
+  <script src="./assets/js/app.min.js"></script>
+  <script src="./assets/js/mailbox.js"></script>
+
+  <script>
+    (function(document, window, $) {
+      'use strict';
+
+      var Site = window.Site;
+      $(document).ready(function() {
+        Site.run();
+      });
+    })(document, window, jQuery);
+  </script>
+</body>
+</html>

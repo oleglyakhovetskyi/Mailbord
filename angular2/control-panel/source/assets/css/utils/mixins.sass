@@ -1,0 +1,90 @@
+//
+// Block positioning
+//
+
+@mixin center($type: both)
+  @if $type == block
+    display: block
+    margin-left: auto
+    margin-right: auto
+  @if $type == both
+    position: absolute
+    right: 50%
+    bottom: 50%
+    transform: translate(50%,50%)
+  @if $type == ver
+    position: absolute
+    bottom: 50%
+    transform: translate(0,50%)
+  @if $type == hor
+    position: absolute
+    right: 50%
+    transform: translate(50%,0)
+
+@mixin justify
+  font-size: 0
+  line-height: 0
+  text-align: justify
+  text-align-last: justify
+  text-justify: newspaper
+  &:after
+    display: inline-block
+    visibility: hidden
+    overflow: hidden
+    width: 100%
+    height: 0
+    content: ''
+
+//
+// Text
+//
+
+@mixin ellipsis($value: yes)
+  @if $value == yes
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+  @else
+    white-space: normal
+    overflow: visible
+    text-overflow: clip
+
+@mixin smoothing($value: yes)
+  @if $value == yes
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+  @else
+    -webkit-font-smoothing: subpixel-antialiased
+    -moz-osx-font-smoothing: auto
+
+//
+// Shortcuts
+//
+
+@mixin margin($value, $where: bottom)
+  &
+    margin-#{$where}: $value
+  &:last-child
+    margin-#{$where}: 0
+
+@mixin clearfix()
+  &:after,
+  &:before,
+    display: table
+    content: ' '
+  &:after
+    clear: both
+
+@mixin placeholder($opacity: 0.25, $color: #000)
+  ::-webkit-input-placeholder
+    color: $color
+    opacity: $opacity
+  ::-moz-placeholder
+    color: $color
+    opacity: $opacity
+  ::placeholder
+    color: $color
+    opacity: $opacity
+  :-ms-input-placeholder
+    color: $color
+    opacity: $opacity

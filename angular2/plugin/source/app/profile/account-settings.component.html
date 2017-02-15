@@ -1,0 +1,50 @@
+<div class="col-lg-10 col-md-9">
+  <div class="row profil-header">
+    <div class="col-lg-10 col-lg-offset-1 col-md-12">
+      <div class="row">
+        <h1>Update profile</h1>
+        <div class="col-sm-4 profil-img">
+          <img src="" alt="Photo">
+          <file-upload #fu (change)="fu.upload()" [multiple]="true"></file-upload>
+        </div>
+        <div class="col-sm-8 p-l-0 col-map">
+          <div class="map">
+            <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+
+              <Label>Name</Label>
+              <div class="form-group" [ngClass]="{'has-error':!profileForm.controls['name'].valid && profileForm.controls['name'].touched}">
+                <input type="text" class="form-control"
+                      [formControl]="profileForm.controls['name']" [(ngModel)]="profile.Name" name="name"
+                      placeholder="UserName">
+                <span class="help-block" *ngIf="!profileForm.controls['name'].valid && profileForm.controls['name'].touched">Name is required</span>
+              </div>
+              <label>Nickname</label>
+              <div class="form-group"  [ngClass]="{'has-error':!profileForm.controls['nickname'].valid && profileForm.controls['nickname'].touched }">
+                <input type="text" class="form-control" id="nickname"
+                       name="nickname" placeholder="Nickname"
+                       [formControl]="profileForm.controls['nickname']" [(ngModel)]="profile.UserName">
+                <span class="help-block" *ngIf="!profileForm.controls['nickname'].valid && profileForm.controls['nickname'].touched">Nickname must be between 2 and 20 characters long</span>
+              </div>
+              <label>Email</label>
+              <div class="form-group" [ngClass]="{'has-error':!profileForm.controls['email'].valid && profileForm.controls['email'].touched}">
+                <input type="text" class="form-control"
+                        [formControl]="profileForm.controls['email']" [(ngModel)]="profile.Email" name="email"
+                        placeholder="Email" validateEmail >
+                <span class="help-block" *ngIf="!profileForm.controls['email'].valid && profileForm.controls['email'].touched">Please enter valid e-mail address</span>
+              </div>
+              <label>Company</label>
+              <div class="form-group"  [ngClass]="{'has-error':!profileForm.controls['company'].valid && profileForm.controls['company'].touched}">
+                <input type="text" class="form-control" id="company"
+                       name="company" placeholder="Company"
+                       [formControl]="profileForm.controls['company']" [(ngModel)]="profile.Company">
+                <span class="help-block" *ngIf="!profileForm.controls['company'].valid && profileForm.controls['company'].touched">Company is required</span>
+              </div>
+            <button type="submit" class="btn btn-primary btn-block"
+                    [disabled]="!profileForm.controls['email'].valid">Update profile</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

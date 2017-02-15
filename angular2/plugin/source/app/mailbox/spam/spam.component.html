@@ -1,0 +1,72 @@
+      <!-- Mailbox Content -->
+      <div class="page-content page-content-table" data-selectable="selectable">
+
+        <!-- Actions -->
+        <div class="page-content-actions">
+          <div class="pull-right filter">
+            <span>Filter :</span>
+            <div class="dropdown">
+              <button type="button" class="btn btn-pure dropdown-toggle" data-toggle="dropdown"
+              aria-expanded="false">
+                Check all
+                <span class="icon wb-chevron-down-mini" aria-hidden="true"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right animation-scale-up animation-top-right animation-duration-250"
+              role="menu">
+                <li><a href="javascript:void(0)">Check all</a></li>
+                <li><a href="javascript:void(0)">Check read</a></li>
+                <li><a href="javascript:void(0)">Check unread</a></li>
+                <li class="divider"></li>
+                <li><a href="javascript:void(0)">Check starred</a></li>
+                <li><a href="javascript:void(0)">Check unstarred</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="actions-main">
+            <span class="checkbox-custom checkbox-primary checkbox-lg inline-block vertical-align-bottom">
+              <input type="checkbox" class="mailbox-checkbox selectable-all" id="select_all"
+              />
+              <label for="select_all"></label>
+            </span>
+            <div class="btn-group">
+              <div class="dropdown">
+                <button class="btn btn-icon btn-pure btn-default dropdown-toggle" data-toggle="dropdown"
+                aria-expanded="false" type="button"><i class="icon wb-folder" aria-hidden="true" data-toggle="tooltip"
+                  data-original-title="Folder" data-container="body" title=""></i></button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="javascript:void(0)">work</a></li>
+                  <li><a href="javascript:void(0)">Family</a></li>
+                  <li><a href="javascript:void(0)">Private</a></li>
+                  <li><a href="javascript:void(0)">Friends</a></li>
+                  <li class="divider"></li>
+                  <li><a href="javascript:void(0)">Trash</a></li>
+                  <li><a href="javascript:void(0)">Spam</a></li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-icon btn-pure btn-default dropdown-toggle" data-toggle="dropdown"
+                aria-expanded="false" type="button"><i class="icon wb-tag" aria-hidden="true" data-toggle="tooltip"
+                  data-original-title="Tag" data-container="body" title=""></i></button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="javascript:void(0)">work</a></li>
+                  <li><a href="javascript:void(0)">Family</a></li>
+                  <li><a href="javascript:void(0)">Private</a></li>
+                  <li><a href="javascript:void(0)">Friends</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mailbox -->
+        <table id="mailboxTable" class="table" data-plugin="animateList" data-animate="fade"
+        data-child="tr">
+          <tbody>
+            
+          Spam
+        
+          </tbody>
+        </table>
+        <!-- pagination -->
+        <ul data-plugin="paginator" data-total="50" data-skin="pagination-gap"></ul>
+      </div>

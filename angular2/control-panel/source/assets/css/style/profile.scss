@@ -1,0 +1,21 @@
+.profile-container {
+	position: relative;
+    background-color: #fff;
+    margin-top: 5%;
+    padding: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.profile-card {
+    min-height: 350px;
+}
+
+.profile-row {
+    font-size: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.045);
+}
+
+.profile-img {
+    width: 100%;
+}

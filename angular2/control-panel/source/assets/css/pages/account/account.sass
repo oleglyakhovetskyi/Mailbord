@@ -1,0 +1,23 @@
+.account
+  &.ng-enter
+    transition: .3s ease-in-out all
+    opacity: 0
+  &.ng-enter.ng-enter-active
+    opacity: 1
+  &.ng-leave
+    transition: .3s ease-in-out all
+    opacity: 1
+  &.ng-leave.ng-leave-active
+    opacity: 0
+  .block
+    +center
+    width: 340px
+    padding: 30px 40px
+    background: #fff
+    box-shadow: 0 15px 35px rgba(0,0,0,.15)
+
+  @import 'account-sign-in'
+  @import 'account-sign-up'
+  @import 'account-recovery'
+
+

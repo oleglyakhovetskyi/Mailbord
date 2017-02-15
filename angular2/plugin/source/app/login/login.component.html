@@ -1,0 +1,38 @@
+<div class="page vertical-align text-center">
+  <div class="page-content vertical-align-middle">
+    <p>Sign into your pages account</p>
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
+      <div class="form-group"  [ngClass]="{'has-error':!loginForm.controls['userName'].valid && loginForm.controls['userName'].touched}">
+        <input type="text" class="form-control" id="name"
+               name="name" placeholder="Login"
+               [formControl]="loginForm.controls['userName']" [(ngModel)]="model.userName">
+        <span class="help-block" *ngIf="!loginForm.controls['userName'].valid && loginForm.controls['userName'].touched">Name is required</span>
+      </div>
+      <!--<div class="form-group" [ngClass]="{'has-error':!loginForm.controls['email'].valid && loginForm.controls['email'].touched}">-->
+        <!--<input type="email" class="form-control" id="email"-->
+               <!--name="email" placeholder="Email"-->
+               <!--validateEmail-->
+               <!--[formControl]="loginForm.controls['email']" [(ngModel)]="model.email">-->
+        <!--<span class="help-block" *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched">Please enter valid e-mail address</span>-->
+      <!--</div>-->
+      <div class="form-group" [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
+        <input type="password" class="form-control" id="password"
+               name="password" placeholder="Password" [formControl]="loginForm.controls['password']" [(ngModel)]="model.password">
+        <span class="help-block" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">Password must be at least 8 characters</span>
+      </div>
+      <!--<div class="form-group clearfix">-->
+        <!--<div class="checkbox-custom checkbox-inline checkbox-primary pull-left">-->
+          <!--<input type="checkbox" id="inputCheckbox" name="remember">-->
+          <!--<label for="inputCheckbox">Remember me</label>-->
+        <!--</div>-->
+        <!--<a class="pull-right" href="forgot-password.html">Forgot password?</a>-->
+      <!--</div>-->
+      <button type="submit" class="btn btn-primary btn-block"
+              [disabled]="!loginForm.valid || loading"
+              (click)="login()">Sign in</button>
+      <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </form>
+    <!--<a routerLink="/profile" *ngIf="authenticated"></a>-->
+    <!--<a (click)="logout()">Logout</a>-->
+  </div>
+</div>

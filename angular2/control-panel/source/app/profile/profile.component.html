@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="row profile-container">
+                <div class="col-sm-4">
+                    <!--<img src="assets/img/avatars/avatar12_big@2x.png" alt="" class="profile-img">-->
+                    <img src="{{user.Image}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="profile-card">
+                            <div class="h3">Contact information</div>
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td><em class="ion-document-text icon-fw mr"></em>Internal Email</td>
+                                        <td class="ng-binding">{{user.UserName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><em class="ion-egg icon-fw mr"></em>Email</td>
+                                        <td><span editable-email="user.email" e-form="user.profileForm" class="ng-scope ng-binding editable">{{user.Email}}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><em class="ion-egg icon-fw mr"></em>Company</td>
+                                        <td><span editable-email="user.email" e-form="user.profileForm" class="ng-scope ng-binding editable">{{user.Company}}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><em class="ion-egg icon-fw mr"></em>Name</td>
+                                        <td><span editable-email="user.email" e-form="user.profileForm" class="ng-scope ng-binding editable">{{user.Name}}</span></td>
+                                    </tr>
+                                    <!--<tr>-->
+                                        <!--<td><em class="ion-egg icon-fw mr"></em>Internal Email</td>-->
+                                        <!--<td><span editable-email="user.email" e-form="user.profileForm" class="ng-scope ng-binding editable">{{user.InternalEmail}}</span></td>-->
+                                    <!--</tr>-->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-xs-12">
+                            <a routerLink="/account-settings" class="btn btn-primary btn-block">Account settings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

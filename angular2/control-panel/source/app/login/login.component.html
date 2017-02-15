@@ -1,0 +1,27 @@
+<div class="container login-container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="page vertical-align text-center">
+                <div class="page-content vertical-align-middle">
+                    <p>Sign into your pages account</p>
+                    <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
+                        <div class="form-group" [ngClass]="{'has-error':!loginForm.controls['userName'].valid && loginForm.controls['userName'].touched}">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="nickname@steadywork.pro" [formControl]="loginForm.controls['userName']" [(ngModel)]="model.userName">
+                            <span class="help-block" *ngIf="!loginForm.controls['userName'].valid && loginForm.controls['userName'].touched">Field is required</span>
+                        </div>
+                        <div class="form-group" [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" [formControl]="loginForm.controls['password']" [(ngModel)]="model.password">
+                            <span class="help-block" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">Password must be at least 8 characters</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.valid || loading" (click)="login()">Sign in</button>
+                        <div *ngIf="loading" class="loader">
+                            <img src="assets/img/svg/spin.svg" />
+                        </div>
+                    </form>
+                    <p>Still no account? Please go to <a routerLink="/registration">Register</a></p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+/*!
+ * Custom core CSS
+ * version: 0.0.3
+ */
+
+.navbar-brand svg {
+    width: 48px;
+}
+
+.page-light.layout-full {
+	background-color: #f1f4f5;
+}
+
+.page-copyright {
+    color: #c3c7ca;
+    font-size: 1.2rem;
+    letter-spacing: .03rem;
+}
+
+.site-menubar-fold .site-menu>.site-menu-item>a .site-menu-icon {
+	line-height: inherit;
+}

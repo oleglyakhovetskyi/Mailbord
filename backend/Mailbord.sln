@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailbord", "Mailbord\Mailbord.csproj", "{8FBA7148-D937-471F-9EA2-850FBF93145C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailbord.Repository", "Mailbord.Repository\Mailbord.Repository.csproj", "{55150B0B-A47F-4F10-A7E3-11CC8B1B5DB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailbord.Work", "Mailbord.Work\Mailbord.Work.csproj", "{6DDC86BE-FE49-4115-BA3C-386D3FC1979C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailbord.Data", "Mailbord.Data\Mailbord.Data.csproj", "{7390F237-E28A-4F7C-BB33-F1F74A353E57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailbord.Identity", "Mailbord.Identity\Mailbord.Identity.csproj", "{D0B91E6C-8689-4611-8EE3-F40FCBF91DA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailbord.Core", "Mailbord.Core\Mailbord.Core.csproj", "{7805E056-D9DD-4863-9069-A2D33FE4CE27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FBA7148-D937-471F-9EA2-850FBF93145C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FBA7148-D937-471F-9EA2-850FBF93145C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FBA7148-D937-471F-9EA2-850FBF93145C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FBA7148-D937-471F-9EA2-850FBF93145C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55150B0B-A47F-4F10-A7E3-11CC8B1B5DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55150B0B-A47F-4F10-A7E3-11CC8B1B5DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55150B0B-A47F-4F10-A7E3-11CC8B1B5DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55150B0B-A47F-4F10-A7E3-11CC8B1B5DB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DDC86BE-FE49-4115-BA3C-386D3FC1979C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DDC86BE-FE49-4115-BA3C-386D3FC1979C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DDC86BE-FE49-4115-BA3C-386D3FC1979C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DDC86BE-FE49-4115-BA3C-386D3FC1979C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7390F237-E28A-4F7C-BB33-F1F74A353E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7390F237-E28A-4F7C-BB33-F1F74A353E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7390F237-E28A-4F7C-BB33-F1F74A353E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7390F237-E28A-4F7C-BB33-F1F74A353E57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0B91E6C-8689-4611-8EE3-F40FCBF91DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B91E6C-8689-4611-8EE3-F40FCBF91DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B91E6C-8689-4611-8EE3-F40FCBF91DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B91E6C-8689-4611-8EE3-F40FCBF91DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7805E056-D9DD-4863-9069-A2D33FE4CE27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7805E056-D9DD-4863-9069-A2D33FE4CE27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7805E056-D9DD-4863-9069-A2D33FE4CE27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7805E056-D9DD-4863-9069-A2D33FE4CE27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
